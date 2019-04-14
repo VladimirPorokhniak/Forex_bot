@@ -30,6 +30,7 @@ def curs_online():
         count -= 1
         bot.send_message(Chat_id_root, "ERROR")
         print(p)
+        print(page)
     return a
 
 
