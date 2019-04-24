@@ -38,7 +38,7 @@ def start_program():
 
 
 def activation(x):
-    a = (2 / (1 + math.exp(-x))) - 1
+    a = (1 / (1 + math.exp(-x)))
     return a
 
 
@@ -75,7 +75,8 @@ def change_curs():
             Neyron[0][i] = 0
         status_full = 0
     if status_full == (coll_neyronov_na_uravne - 1):
-        msg = str(ANSWER) + "\n" + str(Neyron[0][coll_neyronov_na_uravne - 1]) + "\n Mistake is :" + str(abs(1 - (ANSWER / Neyron[0][coll_neyronov_na_uravne - 1])) * 100) + "%"
+        msg = "{0}\n{1}\n Mistake is :{2}%".format(str(ANSWER), str(Neyron[0][coll_neyronov_na_uravne - 1]), str(
+            round(abs(1 - (ANSWER / Neyron[0][coll_neyronov_na_uravne - 1])) * 100, 5)))
         bot.send_message(Chat_id_root, msg)
         ANSWER = predict()
 
@@ -84,15 +85,13 @@ def predict():
     out_neyron = 0
     global Neyron, Weight, Weights, coll_neyronov_na_uravne, coll_skrytyh_uravney
     for j1 in range(1, coll_skrytyh_uravney + 1):
-        for j2 in range(1, coll_neyronov_na_uravne):
+        for j2 in range(0, coll_neyronov_na_uravne):
             Neyron[j1][j2] = 0
-            for j3 in range(1, coll_neyronov_na_uravne):
+            for j3 in range(0, coll_neyronov_na_uravne):
                 Neyron[j1][j2] += (Neyron[j1 - 1][j3] * Weights[j1 - 1][j2][j3])
-            Neyron[j1][j2] += Weights[j1 - 1][0][j2]
             Neyron[j1][j2] = activation(Neyron[j1][j2])
-    for j in range(1, coll_neyronov_na_uravne):
+    for j in range(0, coll_neyronov_na_uravne):
         out_neyron += (Neyron[coll_skrytyh_uravney][j] * Weight[j])
-    out_neyron += Weight[0]
     out_neyron = round(activation(out_neyron), 5)
     return out_neyron
 
