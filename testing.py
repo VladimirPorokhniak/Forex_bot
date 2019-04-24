@@ -7,7 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 TOKEN = '706327123:AAHVz1o6OxOMwl4Vma5RAG5RlQ8f-U44tjM'
 Chat_id_root = 448157691
-coll_neyronov_na_uravne: int = 3  # 1 + 2
+coll_neyronov_na_uravne: int = 1
 coll_skrytyh_uravney: int = 2
 Constanta = 1
 ANSWER = 0
