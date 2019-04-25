@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 TOKEN = '706327123:AAHVz1o6OxOMwl4Vma5RAG5RlQ8f-U44tjM'
 Chat_id_root = 448157691
+DeltaTime = 3
 
 
 def curs_online(curs='eur-usd'):

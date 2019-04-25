@@ -170,15 +170,9 @@ def learn_net():
 def Learn():
     global Epoch, Iteration, Mistake_of_test_new, Mistake_of_test_old, Mistake_of_learn_old, Mistake_of_learn_new, speed_of_learn
     bot.send_message(Chat_id_root, "Сбор данных...")
-    print("Сбор данных...")
     Data_for_learn()
     bot.send_message(Chat_id_root, "Сбор данных завершен")
-    print("Сбор данных завеншен")
-    print(Weights)
-    print("\n\n")
-    print(Weight)
     bot.send_message(Chat_id_root, "Обучение нейронной сети...")
-    print("Обучение нейронной сети...")
     for epoha in range(Epoch):
         save(True)
         for iteration in range(Iteration):
@@ -202,12 +196,7 @@ def Learn():
             save(False)
             bot.send_message(Chat_id_root, str(Mistake_of_test_old))
             break
-    print("\n\n\n\n")
-    print(Weights)
-    print("\n\n")
-    print(Weight)
     bot.send_message(Chat_id_root, "Обучение нейронной сети завершено")
-    print("Обучение нейронной сети завершено")
 
 
 @bot.message_handler(commands=['start'])
@@ -260,7 +249,7 @@ def start_bot():
 def start_checker() -> object:
     while True:
         now = datetime.datetime.now()
-        if now.hour == 17 and now.minute == 48:
+        if (now.hour == 23 - DeltaTime) and now.minute == 56:
             Learn()
         if now.minute in [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59] and now.second == 58 and (
                 955000 < now.microsecond <= 960000):
