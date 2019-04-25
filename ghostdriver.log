@@ -1,12 +1,12 @@
-[INFO  - 2019-04-25T14:49:59.070Z] GhostDriver - Main - running on port 34109
-[INFO  - 2019-04-25T14:49:59.985Z] Session [6676cec0-6769-11e9-ad4e-993f26ca416b] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2019-04-25T14:49:59.985Z] Session [6676cec0-6769-11e9-ad4e-993f26ca416b] - page.customHeaders:  - {}
-[INFO  - 2019-04-25T14:49:59.985Z] Session [6676cec0-6769-11e9-ad4e-993f26ca416b] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2019-04-25T14:49:59.985Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 6676cec0-6769-11e9-ad4e-993f26ca416b
-[ERROR - 2019-04-25T14:50:02.597Z] Session [6676cec0-6769-11e9-ad4e-993f26ca416b] - page.onError - msg: ReferenceError: Can't find variable: hj
+[INFO  - 2019-04-25T15:04:59.093Z] GhostDriver - Main - running on port 38743
+[INFO  - 2019-04-25T15:04:59.978Z] Session [7ee6b040-676b-11e9-86ae-d90876161163] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2019-04-25T15:04:59.978Z] Session [7ee6b040-676b-11e9-86ae-d90876161163] - page.customHeaders:  - {}
+[INFO  - 2019-04-25T15:04:59.979Z] Session [7ee6b040-676b-11e9-86ae-d90876161163] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2019-04-25T15:04:59.979Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 7ee6b040-676b-11e9-86ae-d90876161163
+[ERROR - 2019-04-25T15:05:03.304Z] Session [7ee6b040-676b-11e9-86ae-d90876161163] - page.onError - msg: ReferenceError: Can't find variable: hj
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2019-04-25T14:50:02.597Z] Session [6676cec0-6769-11e9-ad4e-993f26ca416b] - page.onError - stack:
+[ERROR - 2019-04-25T15:05:03.305Z] Session [7ee6b040-676b-11e9-86ae-d90876161163] - page.onError - stack:
   (anonymous function) (https://static.hotjar.com/c/hotjar-25158.js?sv=5:3)
   (anonymous function) (https://static.hotjar.com/c/hotjar-25158.js?sv=5:3)
   n (https://static.hotjar.com/c/hotjar-25158.js?sv=5:3)

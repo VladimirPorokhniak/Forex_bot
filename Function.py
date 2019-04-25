@@ -42,3 +42,9 @@ def randomer(index: object) -> object:
     else:
         a = random.randint(0, 1)
     return a
+
+
+
+
+
+
