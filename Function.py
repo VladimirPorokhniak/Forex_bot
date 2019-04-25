@@ -8,9 +8,10 @@ TOKEN = '706327123:AAHVz1o6OxOMwl4Vma5RAG5RlQ8f-U44tjM'
 Chat_id_root = 448157691
 
 
-def curs_online():
+def curs_online(curs='eur-usd'):
     wd = webdriver.PhantomJS(executable_path=os.path.abspath('phantomjs'))
-    wd.get("https://www.fxclub.org/markets/forex/eur-usd/")
+    url = "https://www.fxclub.org/markets/forex/" + curs + "/"
+    wd.get(url)
     WebDriverWait(wd, 1)
     page = wd.page_source
     wd.quit()
@@ -42,9 +43,3 @@ def randomer(index: object) -> object:
     else:
         a = random.randint(0, 1)
     return a
-
-
-
-
-
-
