@@ -230,7 +230,7 @@ def answer_to_message(message: Message):
     global Neyron, status_of_work, status_of_data, minute
     if answer in ["curs", "Курс", "курс"]:
         bot.reply_to(message, "Курс Евро к Доллару:\n" + str(curs_online()))
-    if answer in ["predict", "Прогнозировать", "прогнозировать"]:
+    elif answer in ["predict", "Прогнозировать", "прогнозировать"]:
         if not status_of_work:
             if status_of_data == (coll_neyronov_na_uravne - 1):
                 bot.send_message(message.chat.id,
@@ -247,7 +247,8 @@ def answer_to_message(message: Message):
                              "Мы не готовы к прогнозированию! \n Повторите попытку через " + str(Time) + minute)
         else:
             bot.reply_to(message, "Повторите попытку через 5 секунд!")
-
+    else:
+        bot.reply_to(message, "Запрос не понятен!")
 
 def start_bot():
     bot.polling(none_stop=True)
