@@ -242,6 +242,7 @@ def answer_to_message(message: Message):
     else:
         bot.reply_to(message, "Запрос не понятен!")
 
+
 def start_bot():
     bot.polling(none_stop=True)
 
