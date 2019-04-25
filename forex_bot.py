@@ -3,6 +3,7 @@ import threading
 import telebot
 from Function import *
 from telebot.types import Message
+import time
 
 coll_neyronov_na_uravne = 1
 coll_skrytyh_uravney = 2
@@ -222,6 +223,8 @@ def start(message: Message):
 def stop(message: Message):
     bot.send_message(message.chat.id, text="Бот остановлен!")
     bot.stop_polling()
+    time.sleep(30)
+    bot.polling()
 
 
 @bot.message_handler(func=lambda message: True)
