@@ -4,7 +4,7 @@ import random
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 
-TOKEN = '706327123:AAHVz1o6OxOMwl4Vma5RAG5RlQ8f-U44tjM'
+TOKEN = '706327123:AAHuPNEyFC57Y5XbIXOWCQ32e6ii9Gfpon0'
 Chat_id_root = 448157691
 DeltaTime = 3
 
@@ -38,9 +38,8 @@ def proizvodnaya(x):
     return x * (1 - x)
 
 
-def randomer(index: object) -> object:
-    if index:
-        a = random.uniform(-10, 10)
-    else:
-        a = random.randint(0, 1)
+def randomer() -> object:
+    b = 10000
+    a = random.randint(0 - b, b)
+    a /= (b/10)
     return a
