@@ -38,5 +38,4 @@ for count in range(108):
         now = datetime.datetime.now()
         if now.minute in [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59] and now.second == 58 and (955000 < now.microsecond <= 960000):
             bot.send_message(Chat_id_root, str(curs_online()))
-            Time = (coll_neyronov_na_uravne - status_of_full - 1) * 5
             break
