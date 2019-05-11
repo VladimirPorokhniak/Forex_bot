@@ -1,6 +1,7 @@
-from Funtion import MAX_neyronov_na_uravne, MAX_skrytyh_uravney, Coll_NeyroNETS, Iteration, Epoch, TOKEN, Chat_id_root
+import random
+import telebot
 from math import exp
-import random, telebot
+from Funtion import MAX_neyronov_na_uravne, MAX_skrytyh_uravney, Coll_NeyroNETS, Iteration, Epoch, TOKEN, Chat_id_root
 
 bot1 = telebot.TeleBot(TOKEN, threaded=False)
 
@@ -155,15 +156,16 @@ def Learning():
     random_weight()
     for epoch in range(Epoch):
         save(True)
+        print(epoch)
         for iteration in range(Iteration):
             testy(True, iteration)
             if learn_net() == 100:
-                return 0
+                return 1000
         Mistake_of_learn_new /= Iteration
         for iteration in range(Iteration):
             testy(False, iteration)
             if test_net(False) == 100:
-                return 0
+                return 1000
         Mistake_of_test_new /= Iteration
         if Mistake_of_learn_new < Mistake_of_learn_old:
             Mistake_of_learn_old = Mistake_of_learn_new
@@ -176,11 +178,13 @@ def Learning():
             Mistake_of_test_old = Mistake_of_test_new
         elif Mistake_of_test_new > Mistake_of_test_old:
             save(False)
-            return Mistake_of_test_old
+            break
+    return Mistake_of_test_old
 
 
 def LearnNet(Data_list, coll_skr, coll_neyronov_na_vhode):
     global coll_skrytyh_uravney, coll_neyronov_na_vhod
+    message = 0
     coll_skrytyh_uravney = coll_skr
     coll_neyronov_na_vhod = coll_neyronov_na_vhode
     Make_Data(Data_list, coll_neyronov_na_vhode)
@@ -188,10 +192,13 @@ def LearnNet(Data_list, coll_skr, coll_neyronov_na_vhode):
     WELL_coll_neyronov_na_uravne = 0
     for i in range(Coll_NeyroNETS):
         a = Learning()
-        if i % 200000 == 0:
-            bot1.send_message(Chat_id_root, "Обучение сети(" + str(coll_neyronov_na_vhod) + "_" + str(coll_skr - 1)
-                              + "): " + str(int(i / 10000)) + "%")
-        if a < WELL_Mistake_of_Net:
-            WELL_Mistake_of_Net = a
-            WELL_coll_neyronov_na_uravne = coll_neyronov_na_uravne
+        if i % (0.1 * (Coll_NeyroNETS / 100)) == 0:
+            if not i == 0:
+                bot1.delete_message(Chat_id_root, message.message_id)
+            message = bot1.send_message(Chat_id_root, "Обучение сети(" + str(coll_neyronov_na_vhod) + "_"
+                                        + str(coll_skr - 1) + "): " + str(i / (Coll_NeyroNETS / 100)) + "%")
+    if a < WELL_Mistake_of_Net:
+        WELL_Mistake_of_Net = a
+        WELL_coll_neyronov_na_uravne = coll_neyronov_na_uravne
+    bot1.delete_message(Chat_id_root, message.message_id)
     return WELL_Mistake_of_Net, WELL_coll_neyronov_na_uravne

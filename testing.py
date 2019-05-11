@@ -20,15 +20,15 @@ def look_for_net():
     bot.send_message(Chat_id_root, "Сбор данных завершен")
     bot.send_message(Chat_id_root, "Обучение нейронных сетей...")
     id_number = 1
-    for skr in range(1, MAX_skrytyh_uravney + 1):
-        for vhod in range(1, MAX_na_vhod + 1):
+    for vhod in range(1, MAX_na_vhod + 1):
+        for skr in range(1, MAX_skrytyh_uravney + 1):
             Mistake_of_net, coll_neyronov_na_uravne = LearnNet(Data_list, skr, vhod)
             neyron = ""
             for i in range(skr + 1):
                 neyron += str(coll_neyronov_na_uravne[i])
                 if not i == skr:
                     neyron += "_"
-            bot.send_message(Chat_id_root, str(id_number) + " Mistake_of(" + str(skr - 1) + "_" + str(vhod) + ")= " +
+            bot.send_message(Chat_id_root, str(id_number) + " Mistake_of(" + str(vhod) + "_" + str(skr - 1) + ")= " +
                              str(Mistake_of_net) + "  " + neyron)
             id_number += 1
     bot.send_message(Chat_id_root, "Обучение нейронных сетей завершено")

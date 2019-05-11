@@ -10,7 +10,7 @@ MAX_skrytyh_uravney = 100
 MAX_na_vhod = 30
 Constanta = 1
 Iteration = 10
-Epoch = 10000000
+Epoch = 10000
 Coll_NeyroNETS = 1000000
 
 

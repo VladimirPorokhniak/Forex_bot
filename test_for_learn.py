@@ -4,7 +4,7 @@ import os
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 
-TOKEN = "872334684:AAFOj0LlgVPW5RQhNNPYR7mqLyUkzkSa6BQ"
+TOKEN1 = "872334684:AAFOj0LlgVPW5RQhNNPYR7mqLyUkzkSa6BQ"
 Chat_id_root: int = 448157691
 count = 0
 bot = telebot.TeleBot(TOKEN, threaded=False)
